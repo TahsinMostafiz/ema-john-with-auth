@@ -1,0 +1,115 @@
+.form_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.form-div {
+    width: 500px;
+    background: #FFFFFF;
+    border: 1px solid #95A0A7;
+    border-radius: 8px;
+    padding: 45px;
+    box-shadow: -10px 10px 0px 0px #FFE0B3;
+}
+
+.form-div h2 {
+    font-weight: 400;
+    font-size: 35px;
+    letter-spacing: 0.0025em;
+    color: #2A414F;
+    text-align: center;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.form-div .form-group {
+    margin-bottom: 20px;
+}
+
+.form-div .form-group label{
+    display: block;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: 0.0015em;
+    color: #2A414F;
+    margin-bottom: 10px;
+}
+
+.form-div .form-group input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #95A0A7;
+    border-radius: 5px;
+}
+
+.form-div .btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    border: 1px solid rgba(149, 160, 167, 1);
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 25px;
+    letter-spacing: 0.0015em;
+    color: #0E161A;
+    cursor: pointer;
+    
+}
+.form-div .btn-submit {
+    background: rgba(255, 153, 0, 0.3);
+    border: 0px;
+    margin-bottom: 5px;
+}
+
+.form-div .btn-google{
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: 0.005em;
+    color: #2A414F;
+}
+
+.form-div p{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.0025em;
+    color: #2A414F;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-div p a {
+    color: #FF9900;
+    text-decoration: none;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.form-div .divider hr {
+    width: 100%;
+}
+
+.form-div .divider span {
+    margin: 0 20px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: 0.005em;
+    color: #95A0A7;
+    margin-bottom: 5px;
+}
