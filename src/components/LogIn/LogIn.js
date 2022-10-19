@@ -1,14 +1,60 @@
-import React from 'react';
+import React, { useContext} from 'react';
 import './LogIn.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle} from 'react-icons/fa';
+import { AuthContext } from '../Context/UserContest';
 
 const LogIn = () => {
+    
+
+    const {signIn, googleSignIn} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/';
+
+    const handleSignIn = (event) => {
+        event.preventDefault();
+
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        signIn(email, password)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            console.log(user)
+            form.reset()
+            navigate(from, {replace : true});
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+          });
+        
+    }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+        .then((result) => {
+    
+            // The signed-in user info.
+            const user = result.user;
+            console.log(user)
+          }).catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+          });
+    }
+
     return (
         <div className="form_container">
             <div className="form-div">
                 <h2>Log In</h2>
-                <form>
+                <form onSubmit={handleSignIn}>
                     <div className="form-group">
                         <label htmlFor="email" >Email</label>
                         <input type="email" name='email' required/>
@@ -28,7 +74,7 @@ const LogIn = () => {
                     <hr />
                 </div>
                 <div>
-                    <button className='btn btn-google'> <FaGoogle /> Continue with Google</button>
+                    <button onClick={handleGoogleSignIn} className='btn btn-google'> <FaGoogle /> Continue with Google</button>
                 </div>
             </div>
         </div>
